@@ -149,7 +149,7 @@ class Image extends Component {
                 });
 
         var customOverlay = (typeof this.props.item.customOverlay === 'undefined')
-                ? <noscript/> :
+                ? <noscript/> : this.props.item.overlayOnHover ?
                 <div className="custom-overlay"
         key={"custom-overlay-"+this.props.index}
         style={{
@@ -159,7 +159,7 @@ class Image extends Component {
             height: "100%",
             width: "100%"}}>
             {this.props.item.customOverlay}
-        </div>;
+        </div> : {this.props.item.customOverlay};
 
         return (
                 <div className="tile"
@@ -259,7 +259,8 @@ Image.propTypes = {
     tileViewportStyle: PropTypes.func,
     thumbnailStyle: PropTypes.func,
     tagStyle: PropTypes.object,
-    customOverlay: PropTypes.element
+    customOverlay: PropTypes.element,
+    overlayOnHover: PropTypes.bool
 };
 
 Image.defaultProps = {
