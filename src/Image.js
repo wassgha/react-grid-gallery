@@ -159,7 +159,7 @@ class Image extends Component {
             height: "100%",
             width: "100%"}}>
             {this.props.item.customOverlay}
-        </div> : {this.props.item.customOverlay};
+        </div> : this.props.item.customOverlay;
 
         return (
                 <div className="tile"
